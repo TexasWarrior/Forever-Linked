@@ -358,9 +358,9 @@ rgba(196,108,58,.20)
 
 ),
 
-url("images/foreverlinkedlogo.png");
+url("images/foreverlinkedbackground.png");
 
- background-size: 70% auto;
+ background-size: 85% auto;
     background-position: top center;
     background-repeat:no-repeat;
 background-color: #1b1b1b;
