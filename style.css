@@ -1,0 +1,358 @@
+/* ===========================
+   GOOGLE FONT VARIABLES
+=========================== */
+
+:root{
+
+    --cream:#F8F4EF;
+    --beige:#E8DDD1;
+    --taupe:#C7B8A8;
+    --brown:#8E6E53;
+    --sage:#AAB5A0;
+    --dark:#4A403A;
+    --white:#ffffff;
+
+    --heading:'Cormorant Garamond', serif;
+    --body:'Poppins', sans-serif;
+
+}
+
+
+/* ===========================
+        GLOBAL RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:var(--body);
+    background:var(--cream);
+    color:var(--dark);
+    line-height:1.7;
+
+}
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+section{
+
+    padding:100px 8%;
+
+}
+
+.container{
+
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+
+}
+
+h1,h2,h3{
+
+    font-family:var(--heading);
+    font-weight:600;
+
+}
+
+h1{
+
+    font-size:4rem;
+
+}
+
+h2{
+
+    font-size:2.8rem;
+    margin-bottom:20px;
+
+}
+
+p{
+
+    font-size:1rem;
+
+}
+
+
+/* ===========================
+        NAVIGATION
+=========================== */
+
+header{
+
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+
+    background:rgba(248,244,239,.95);
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+
+}
+
+.navbar{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 40px;
+
+}
+
+.logo{
+
+    font-size:2rem;
+    color:var(--brown);
+
+    letter-spacing:2px;
+
+}
+
+.nav-links{
+
+    display:flex;
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--brown);
+
+}
+
+
+/* ===========================
+        BUTTONS
+=========================== */
+
+.btn,
+.hero-button{
+
+    display:inline-block;
+
+    background:var(--brown);
+
+    color:white;
+
+    padding:14px 32px;
+
+    border-radius:40px;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.btn:hover,
+.hero-button:hover{
+
+    background:var(--dark);
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ===========================
+        HERO SECTION
+=========================== */
+
+.hero{
+
+    height:100vh;
+
+    background:url(images/hero.jpg);
+
+    background-size:cover;
+
+    background-position:center;
+
+    position:relative;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.28);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.hero-content{
+
+    max-width:800px;
+
+    padding:20px;
+
+}
+
+.hero-content p{
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content h1{
+
+    margin-bottom:20px;
+
+}
+
+.hero-content h3{
+
+    font-family:var(--body);
+
+    font-weight:300;
+
+    margin-bottom:40px;
+
+}
+
+
+/* ===========================
+      SECTION TITLES
+=========================== */
+
+.services h2,
+.gallery h2,
+.contact h2,
+.booking h2,
+.reviews h2{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+
+/* ===========================
+     RESPONSIVE DESIGN
+=========================== */
+
+@media(max-width:900px){
+
+.navbar{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.nav-links{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.hero-content h1{
+
+    font-size:3rem;
+
+}
+
+}
+
+@media(max-width:600px){
+
+section{
+
+    padding:70px 25px;
+
+}
+
+.hero-content h1{
+
+    font-size:2.4rem;
+
+}
+
+.hero-content h3{
+
+    font-size:1rem;
+
+}
+
+.logo{
+
+    font-size:1.5rem;
+
+}
+
+.nav-links{
+
+    gap:15px;
+
+}
+
+}
