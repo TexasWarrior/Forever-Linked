@@ -356,3 +356,394 @@ section{
 }
 
 }
+/* ===================================
+        ABOUT SECTION
+=================================== */
+
+.about {
+    background: var(--white);
+}
+
+.about .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image img {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
+
+.about-text h2 {
+    color: var(--brown);
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+
+/* ===================================
+        SERVICES
+=================================== */
+
+.services {
+    background: var(--cream);
+}
+
+.service-grid {
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:45px 30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card h3{
+
+    color:var(--brown);
+
+    margin-bottom:15px;
+
+    font-size:2rem;
+
+}
+
+.card p{
+
+    color:#666;
+
+}
+
+
+/* ===================================
+        GALLERY
+=================================== */
+
+.gallery{
+
+    background:var(--white);
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.gallery-grid img{
+
+    height:340px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ===================================
+        REVIEWS
+=================================== */
+
+.reviews{
+
+    background:var(--beige);
+
+}
+
+.review-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.review{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.review p{
+
+    margin:20px 0;
+
+    font-style:italic;
+
+}
+
+.review h4{
+
+    color:var(--brown);
+
+}
+
+
+/* ===================================
+        BOOKING CTA
+=================================== */
+
+.booking{
+
+    background:linear-gradient(rgba(74,64,58,.82),rgba(74,64,58,.82)),
+    url(images/booking.jpg);
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.booking p{
+
+    max-width:700px;
+
+    margin:20px auto 40px;
+
+}
+
+
+/* ===================================
+        CONTACT
+=================================== */
+
+.contact{
+
+    background:var(--white);
+
+}
+
+.contact form{
+
+    max-width:700px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.contact input,
+.contact textarea{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--cream);
+
+    font-family:var(--body);
+
+    font-size:1rem;
+
+}
+
+.contact input:focus,
+.contact textarea:focus{
+
+    outline:2px solid var(--brown);
+
+}
+
+.contact button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:16px;
+
+    background:var(--brown);
+
+    color:white;
+
+    font-size:1rem;
+
+    border-radius:40px;
+
+    transition:.3s;
+
+}
+
+.contact button:hover{
+
+    background:var(--dark);
+
+}
+
+
+/* ===================================
+        FOOTER
+=================================== */
+
+footer{
+
+    background:var(--dark);
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+
+/* ===================================
+        SIMPLE FADE ANIMATION
+=================================== */
+
+.card,
+.review,
+.gallery img,
+.about-image,
+.about-text{
+
+    animation:fadeUp .9s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ===================================
+        MOBILE
+=================================== */
+
+@media(max-width:900px){
+
+.about .container{
+
+    grid-template-columns:1fr;
+
+}
+
+.about-text{
+
+    text-align:center;
+
+}
+
+.hero{
+
+    background-position:center;
+
+}
+
+}
+
+@media(max-width:600px){
+
+h1{
+
+    font-size:2.6rem;
+
+}
+
+h2{
+
+    font-size:2rem;
+
+}
+
+.hero-content p{
+
+    font-size:.8rem;
+
+}
+
+.gallery-grid img{
+
+    height:250px;
+
+}
+
+.card{
+
+    padding:35px 20px;
+
+}
+
+}
