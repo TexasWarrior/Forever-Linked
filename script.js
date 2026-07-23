@@ -1,109 +1,207 @@
-// ==============================
-// Smooth Scroll for Navigation
-// ==============================
+/*==================================================
+        FOREVER LINKED
+        script.js
+==================================================*/
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
+/*=========================
+        MOBILE MENU
+=========================*/
 
-        const target = document.querySelector(this.getAttribute("href"));
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-        if (target) {
-            e.preventDefault();
+if (menuToggle && navLinks) {
 
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
+    menuToggle.addEventListener("click", () => {
+
+        navLinks.classList.toggle("show-menu");
 
     });
-});
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("show-menu");
+
+        });
+
+    });
+
+}
 
 
-// ==============================
-// Navbar Shadow on Scroll
-// ==============================
+/*=========================
+      STICKY HEADER
+=========================*/
 
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 50) {
+    if (window.scrollY > 80) {
 
-        header.style.boxShadow = "0 8px 20px rgba(0,0,0,.15)";
-        header.style.background = "rgba(248,244,239,.98)";
+        header.classList.add("sticky");
 
     } else {
 
-        header.style.boxShadow = "0 3px 10px rgba(0,0,0,.05)";
-        header.style.background = "rgba(248,244,239,.95)";
+        header.classList.remove("sticky");
 
     }
 
 });
 
 
-// ==============================
-// Fade In Animation
-// ==============================
+/*=========================
+    SCROLL TO TOP BUTTON
+=========================*/
 
-const observer = new IntersectionObserver((entries) => {
+const topBtn = document.getElementById("topBtn");
 
-    entries.forEach(entry => {
+window.addEventListener("scroll", () => {
 
-        if (entry.isIntersecting) {
+    if (window.scrollY > 400) {
 
-            entry.target.classList.add("show");
+        topBtn.style.display = "flex";
+
+    } else {
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+
+/*=========================
+      SMOOTH SCROLL
+=========================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            target.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
 
         }
 
     });
 
-}, {
-    threshold: 0.2
 });
 
 
-document.querySelectorAll("section").forEach(section => {
+/*=========================
+    ACTIVE NAVIGATION
+=========================*/
 
-    section.classList.add("hidden");
-
-    observer.observe(section);
-
-});
-
-
-// ==============================
-// Hero Parallax Effect
-// ==============================
-
-const hero = document.querySelector(".hero");
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
 
-    let offset = window.pageYOffset;
+    let current = "";
 
-    hero.style.backgroundPositionY = offset * 0.5 + "px";
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+
+        if (window.scrollY >= sectionTop) {
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navItems.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
 
 });
 
 
-// ==============================
-// Gallery Lightbox
-// ==============================
+/*=========================
+      SCROLL REVEAL
+=========================*/
 
-const galleryImages = document.querySelectorAll(".gallery img");
+const revealElements = document.querySelectorAll(
+    ".about, .features, .collections, .gallery, .testimonials, .booking, .contact, .instagram"
+);
 
-galleryImages.forEach(img => {
+const reveal = () => {
 
-    img.addEventListener("click", () => {
+    revealElements.forEach(el => {
+
+        const windowHeight = window.innerHeight;
+
+        const revealTop = el.getBoundingClientRect().top;
+
+        if (revealTop < windowHeight - 100) {
+
+            el.classList.add("show");
+
+        }
+
+    });
+
+};
+
+window.addEventListener("scroll", reveal);
+
+reveal();
+
+
+/*=========================
+      GALLERY LIGHTBOX
+=========================*/
+
+const galleryImages = document.querySelectorAll(".gallery-item img");
+
+galleryImages.forEach(image => {
+
+    image.addEventListener("click", () => {
 
         const lightbox = document.createElement("div");
 
         lightbox.id = "lightbox";
 
-        lightbox.innerHTML = `
-            <img src="${img.src}">
-        `;
+        const img = document.createElement("img");
+
+        img.src = image.src;
+
+        img.alt = image.alt;
+
+        lightbox.appendChild(img);
 
         document.body.appendChild(lightbox);
 
@@ -118,122 +216,46 @@ galleryImages.forEach(img => {
 });
 
 
-// ==============================
-// Contact Form
-// ==============================
+/*=========================
+    SIMPLE FADE-IN HERO
+=========================*/
 
-const form = document.querySelector("form");
+window.addEventListener("load", () => {
 
-form.addEventListener("submit", function(e){
+    const heroContent = document.querySelector(".hero-content");
 
-    e.preventDefault();
+    if (heroContent) {
 
-    const name = form.querySelector('input[type="text"]').value.trim();
+        heroContent.style.opacity = "0";
 
-    const email = form.querySelector('input[type="email"]').value.trim();
+        heroContent.style.transform = "translateY(40px)";
 
-    if(name === "" || email === ""){
+        setTimeout(() => {
 
-        alert("Please complete all required fields.");
+            heroContent.style.transition = "all .9s ease";
 
-        return;
+            heroContent.style.opacity = "1";
 
-    }
+            heroContent.style.transform = "translateY(0)";
 
-    alert("Thank you! Your message has been received.");
-
-    form.reset();
-
-});
-
-
-// ==============================
-// Scroll To Top Button
-// ==============================
-
-const topButton = document.createElement("button");
-
-topButton.innerHTML = "↑";
-
-topButton.id = "topBtn";
-
-document.body.appendChild(topButton);
-
-topButton.style.position = "fixed";
-topButton.style.right = "25px";
-topButton.style.bottom = "25px";
-topButton.style.width = "55px";
-topButton.style.height = "55px";
-topButton.style.border = "none";
-topButton.style.borderRadius = "50%";
-topButton.style.background = "#8E6E53";
-topButton.style.color = "white";
-topButton.style.fontSize = "24px";
-topButton.style.cursor = "pointer";
-topButton.style.display = "none";
-topButton.style.boxShadow = "0 10px 20px rgba(0,0,0,.2)";
-topButton.style.transition = ".3s";
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 400){
-
-        topButton.style.display = "block";
-
-    }else{
-
-        topButton.style.display = "none";
+        }, 300);
 
     }
 
 });
 
-topButton.addEventListener("click", () => {
 
-    window.scrollTo({
+/*=========================
+      CURRENT YEAR
+=========================*/
 
-        top:0,
+const year = new Date().getFullYear();
 
-        behavior:"smooth"
+const copyright = document.querySelector(".copyright p");
 
-    });
+if (copyright) {
 
-});
+    copyright.innerHTML =
+        `© ${year} Forever Linked Permanent Jewelry. All Rights Reserved.`;
 
-
-// ==============================
-// Active Navigation Link
-// ==============================
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 120;
-
-        if(window.scrollY >= sectionTop){
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href") === "#" + current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
+}
