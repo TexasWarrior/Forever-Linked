@@ -1449,14 +1449,14 @@ grid-template-columns:1fr;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 .footer-image{
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 0px;
 }
 /* Position each invisible button */
 
