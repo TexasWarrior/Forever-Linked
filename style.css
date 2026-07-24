@@ -1362,3 +1362,1749 @@ header{
     }
 
 }
+/*==================================================
+                GALLERY
+==================================================*/
+
+.gallery{
+
+    background:linear-gradient(
+        180deg,
+        #ffffff,
+        var(--cream)
+    );
+
+}
+
+.gallery .section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+/*==================================================
+                GALLERY CARD
+==================================================*/
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    background:white;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+    cursor:pointer;
+
+}
+
+.gallery-item:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+
+}
+
+/*==================================================
+                IMAGE
+==================================================*/
+
+.gallery-item img{
+
+    width:100%;
+
+    height:420px;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:.7s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/*==================================================
+                OVERLAY
+==================================================*/
+
+.gallery-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:35px;
+
+    background:linear-gradient(
+
+        rgba(0,0,0,0),
+
+        rgba(0,0,0,.75)
+
+    );
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.gallery-item:hover .gallery-overlay{
+
+    opacity:1;
+
+}
+
+.gallery-overlay h3{
+
+    color:white;
+
+    font-size:2rem;
+
+    margin-bottom:8px;
+
+}
+
+.gallery-overlay p{
+
+    color:white;
+
+    line-height:1.6;
+
+}
+
+/*==================================================
+            GOLD BORDER EFFECT
+==================================================*/
+
+.gallery-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border:2px solid transparent;
+
+    border-radius:30px;
+
+    transition:.35s;
+
+    z-index:5;
+
+}
+
+.gallery-item:hover::before{
+
+    border-color:var(--gold);
+
+}
+
+/*==================================================
+                ICON
+==================================================*/
+
+.gallery-icon{
+
+    position:absolute;
+
+    top:25px;
+
+    right:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.2);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    font-size:1.3rem;
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.gallery-item:hover .gallery-icon{
+
+    opacity:1;
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:900px){
+
+    .gallery-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-item img{
+
+        height:320px;
+
+    }
+
+}
+/*==================================================
+                TESTIMONIALS
+==================================================*/
+
+.testimonials{
+
+    position:relative;
+
+    padding:120px 0;
+
+    background:linear-gradient(
+        135deg,
+        var(--black),
+        var(--charcoal)
+    );
+
+    overflow:hidden;
+
+}
+
+/* Decorative background */
+
+.testimonials::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+
+    height:550px;
+
+    border-radius:50%;
+
+    background:rgba(78,185,180,.05);
+
+    top:-220px;
+
+    right:-220px;
+
+}
+
+.testimonials::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(197,108,59,.05);
+
+    bottom:-180px;
+
+    left:-180px;
+
+}
+
+/*==================================================
+                TITLE
+==================================================*/
+
+.testimonials .section-title{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+}
+
+.testimonials h2{
+
+    color:white;
+
+}
+
+/*==================================================
+                GRID
+==================================================*/
+
+.testimonial-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+/*==================================================
+                CARD
+==================================================*/
+
+.testimonial-card{
+
+    position:relative;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:rgba(78,185,180,.35);
+
+    box-shadow:0 25px 55px rgba(0,0,0,.30);
+
+}
+
+/*==================================================
+                QUOTE ICON
+==================================================*/
+
+.quote-icon{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(
+        135deg,
+        var(--burnt),
+        var(--turquoise)
+    );
+
+}
+
+.quote-icon i{
+
+    color:white;
+
+    font-size:1.8rem;
+
+}
+
+/*==================================================
+                REVIEW
+==================================================*/
+
+.testimonial-text{
+
+    color:#ededed;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+
+    font-size:1rem;
+
+}
+
+/*==================================================
+                STARS
+==================================================*/
+
+.stars{
+
+    display:flex;
+
+    gap:5px;
+
+    margin-bottom:30px;
+
+}
+
+.stars i{
+
+    color:var(--gold);
+
+    font-size:1rem;
+
+}
+
+/*==================================================
+                CUSTOMER
+==================================================*/
+
+.customer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.customer img{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid var(--turquoise);
+
+}
+
+.customer-info h3{
+
+    color:white;
+
+    font-size:1.2rem;
+
+    margin-bottom:4px;
+
+}
+
+.customer-info span{
+
+    color:var(--turquoise);
+
+    font-size:.95rem;
+
+}
+
+/*==================================================
+            GOLD BORDER EFFECT
+==================================================*/
+
+.testimonial-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border:2px solid transparent;
+
+    border-radius:30px;
+
+    transition:.35s;
+
+}
+
+.testimonial-card:hover::before{
+
+    border-color:var(--gold);
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+    .testimonial-card{
+
+        padding:35px;
+
+    }
+
+}
+/*==================================================
+                BOOKING SECTION
+==================================================*/
+
+.booking{
+
+    position:relative;
+
+    padding:160px 0;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.45)
+        ),
+        url("images/desert-booking.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+}
+
+/* Turquoise overlay */
+
+.booking::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(78,185,180,.08),
+        rgba(197,108,59,.08)
+    );
+
+}
+
+/*==================================================
+                CONTENT
+==================================================*/
+
+.booking-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:0 20px;
+
+}
+
+.booking .section-subtitle{
+
+    color:var(--turquoise);
+
+    font-size:2.5rem;
+
+    margin-bottom:10px;
+
+}
+
+.booking h2{
+
+    color:white;
+
+    font-size:4.2rem;
+
+    margin-bottom:25px;
+
+}
+
+.booking p{
+
+    color:#f4f4f4;
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    margin-bottom:45px;
+
+}
+
+/*==================================================
+                BUTTONS
+==================================================*/
+
+.booking-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.booking-btn{
+
+    display:inline-block;
+
+    padding:18px 45px;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--burnt),
+        var(--burnt-dark)
+    );
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.booking-btn:hover{
+
+    transform:translateY(-6px);
+
+    background:linear-gradient(
+        135deg,
+        var(--turquoise),
+        var(--turquoise-dark)
+    );
+
+}
+
+.booking-outline{
+
+    display:inline-block;
+
+    padding:18px 45px;
+
+    border:2px solid white;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.booking-outline:hover{
+
+    background:white;
+
+    color:var(--burnt);
+
+}
+
+/*==================================================
+            FLOATING SPARKLES
+==================================================*/
+
+.booking-content::before{
+
+    content:"✦";
+
+    position:absolute;
+
+    left:-70px;
+
+    top:20px;
+
+    font-size:4rem;
+
+    color:rgba(255,255,255,.12);
+
+}
+
+.booking-content::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    right:-70px;
+
+    bottom:15px;
+
+    font-size:4rem;
+
+    color:rgba(255,255,255,.12);
+
+}
+
+/*==================================================
+            ANIMATION
+==================================================*/
+
+.booking-btn,
+.booking-outline{
+
+    animation:floatButton 3s ease-in-out infinite;
+
+}
+
+.booking-outline{
+
+    animation-delay:.5s;
+
+}
+/*==================================================
+                CONTACT
+==================================================*/
+
+.contact{
+
+    background:linear-gradient(
+        180deg,
+        var(--sand),
+        var(--cream)
+    );
+
+    padding:120px 0;
+
+}
+
+.contact .section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+/*==================================================
+                LAYOUT
+==================================================*/
+
+.contact-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1fr 1.2fr;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+/*==================================================
+                CONTACT INFO
+==================================================*/
+
+.contact-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.contact-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:30px;
+
+    background:white;
+
+    border-radius:25px;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 28px 55px rgba(0,0,0,.12);
+
+}
+
+.contact-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--burnt),
+        var(--turquoise)
+    );
+
+    color:white;
+
+    font-size:1.8rem;
+
+    flex-shrink:0;
+
+}
+
+.contact-card h3{
+
+    color:var(--burnt);
+
+    margin-bottom:6px;
+
+}
+
+.contact-card p,
+.contact-card a{
+
+    color:#666;
+
+    text-decoration:none;
+
+}
+
+.contact-card a:hover{
+
+    color:var(--turquoise);
+
+}
+
+/*==================================================
+                CONTACT FORM
+==================================================*/
+
+.contact-form{
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.10);
+
+}
+
+.contact-form h3{
+
+    font-size:2rem;
+
+    color:var(--burnt);
+
+    margin-bottom:25px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#f7f7f7;
+
+    font-family:var(--body);
+
+    font-size:1rem;
+
+    transition:.3s;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    outline:none;
+
+    background:white;
+
+    box-shadow:0 0 0 2px var(--turquoise);
+
+}
+
+.contact-form textarea{
+
+    min-height:180px;
+
+    resize:vertical;
+
+}
+
+.contact-form button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:linear-gradient(
+        135deg,
+        var(--burnt),
+        var(--burnt-dark)
+    );
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.contact-form button:hover{
+
+    background:linear-gradient(
+        135deg,
+        var(--turquoise),
+        var(--turquoise-dark)
+    );
+
+    transform:translateY(-4px);
+
+}
+
+/*==================================================
+                SOCIAL BUTTONS
+==================================================*/
+
+.contact-social{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.contact-social a{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--burnt),
+        var(--turquoise)
+    );
+
+    transition:.35s;
+
+}
+
+.contact-social a:hover{
+
+    transform:translateY(-6px) scale(1.08);
+
+}
+
+/*==================================================
+                MAP
+==================================================*/
+
+.contact-map{
+
+    margin-top:30px;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.10);
+
+}
+
+.contact-map iframe{
+
+    width:100%;
+
+    height:320px;
+
+    border:0;
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:900px){
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .contact-form{
+
+        padding:30px;
+
+    }
+
+    .contact-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+/*==================================================
+                    FOOTER
+==================================================*/
+
+.footer-banner{
+
+    position:relative;
+
+    width:100%;
+
+    margin:0;
+
+    padding:0;
+
+    overflow:hidden;
+
+    background:var(--black);
+
+    line-height:0;
+
+}
+
+.footer-image{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+/*==================================================
+            INVISIBLE SOCIAL BUTTONS
+==================================================*/
+
+.hotspot{
+
+    position:absolute;
+
+    display:block;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:transparent;
+
+    z-index:100;
+
+}
+
+/*
+======================================================
+TEMPORARY POSITIONING MODE
+
+Uncomment this while lining up your buttons.
+
+.hotspot{
+
+    background:rgba(0,255,255,.35);
+
+}
+
+======================================================
+*/
+
+/* Facebook */
+
+.facebook{
+
+    left:42.4%;
+    top:50.4%;
+
+}
+
+/* Instagram */
+
+.instagram{
+
+    left:48.2%;
+    top:50.4%;
+
+}
+
+/* TikTok */
+
+.tiktok{
+
+    left:53.9%;
+    top:50.4%;
+
+}
+
+/* Pinterest */
+
+.pinterest{
+
+    left:59.6%;
+    top:50.4%;
+
+}
+
+/*==================================================
+                COPYRIGHT
+==================================================*/
+
+.copyright{
+
+    background:var(--black);
+
+    color:#d8d8d8;
+
+    text-align:center;
+
+    padding:22px;
+
+    font-size:.95rem;
+
+    letter-spacing:.5px;
+
+}
+
+.copyright span{
+
+    color:var(--turquoise);
+
+    font-weight:600;
+
+}
+
+/*==================================================
+                BACK TO TOP
+==================================================*/
+
+.back-top{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    background:linear-gradient(
+        135deg,
+        var(--burnt),
+        var(--turquoise)
+    );
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+.back-top:hover{
+
+    transform:translateY(-6px) rotate(360deg);
+
+}
+
+/*==================================================
+                FOOTER ANIMATION
+==================================================*/
+
+.footer-banner::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent 0%,
+
+        rgba(255,255,255,.08) 50%,
+
+        transparent 100%
+
+    );
+
+    transform:translateX(-100%);
+
+    animation:footerShine 8s linear infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes footerShine{
+
+    to{
+
+        transform:translateX(100%);
+
+    }
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:900px){
+
+    .hotspot{
+
+        width:55px;
+
+        height:55px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hotspot{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+    .back-top{
+
+        width:50px;
+
+        height:50px;
+
+        right:20px;
+
+        bottom:20px;
+
+    }
+
+}
+/*==================================================
+                FINAL POLISH
+==================================================*/
+
+/* Smooth scrolling */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* Smooth transitions */
+
+*{
+
+    transition:
+        color .3s ease,
+        background-color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+
+}
+
+/* Better image rendering */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/*==================================================
+                SECTION TITLES
+==================================================*/
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+    margin:15px 0;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/* Decorative line */
+
+.section-title h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:4px;
+
+    margin:18px auto;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        var(--burnt),
+        var(--turquoise)
+    );
+
+}
+
+/*==================================================
+                CARD ANIMATIONS
+==================================================*/
+
+.collection-card,
+.gallery-item,
+.highlight,
+.contact-card,
+.testimonial-card{
+
+    will-change:transform;
+
+}
+
+.collection-card:hover,
+.gallery-item:hover,
+.highlight:hover,
+.contact-card:hover,
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/*==================================================
+                BUTTONS
+==================================================*/
+
+button,
+.btn,
+.hero-button,
+.collection-btn,
+.booking-btn{
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+}
+
+button:hover,
+.btn:hover,
+.hero-button:hover,
+.collection-btn:hover,
+.booking-btn:hover{
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.18);
+
+}
+
+/*==================================================
+                SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--cream);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+
+        var(--burnt),
+
+        var(--turquoise)
+
+    );
+
+    border-radius:20px;
+
+}
+
+/*==================================================
+                TEXT SELECTION
+==================================================*/
+
+::selection{
+
+    background:var(--turquoise);
+
+    color:white;
+
+}
+
+/*==================================================
+                FADE-IN ANIMATION
+==================================================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:all .8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*==================================================
+                ICONS
+==================================================*/
+
+i{
+
+    transition:.3s;
+
+}
+
+i:hover{
+
+    transform:scale(1.15);
+
+}
+
+/*==================================================
+                LINKS
+==================================================*/
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    text-decoration:none;
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:992px){
+
+    h1{
+
+        font-size:4rem;
+
+    }
+
+    h2{
+
+        font-size:2.8rem;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    section{
+
+        padding:90px 0;
+
+    }
+
+    h1{
+
+        font-size:3rem;
+
+    }
+
+    h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero-buttons,
+    .booking-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    h1{
+
+        font-size:2.4rem;
+
+    }
+
+    p{
+
+        font-size:.95rem;
+
+    }
+
+}
+@keyframes floatButton{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==================================================
+            MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+    .booking{
+
+        padding:120px 0;
+
+        background-attachment:scroll;
+
+    }
+
+    .booking h2{
+
+        font-size:2.8rem;
+
+    }
+
+    .booking-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .booking-btn,
+    .booking-outline{
+
+        width:260px;
+
+        text-align:center;
+
+    }
+
+}
