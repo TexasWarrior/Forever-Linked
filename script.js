@@ -259,3 +259,30 @@ if (copyright) {
         `© ${year} Forever Linked Permanent Jewelry. All Rights Reserved.`;
 
 }
+/*==============================
+        SCROLL ANIMATION
+==============================*/
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:.2
+});
+
+document.querySelectorAll("section").forEach(section=>{
+
+    section.classList.add("fade-up");
+
+    observer.observe(section);
+
+});
