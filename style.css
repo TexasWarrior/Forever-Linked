@@ -802,16 +802,18 @@ header{
 
 }
 /*==================================================
-                COLLECTIONS
+            LUXURY COLLECTIONS
 ==================================================*/
 
 .collections{
 
     background:linear-gradient(
         180deg,
-        #f7f1e7,
-        #efe3d3
+        #f8f4ed,
+        #ece1d1
     );
+
+    padding:120px 0;
 
 }
 
@@ -819,25 +821,31 @@ header{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 
-    gap:40px;
+    gap:45px;
 
     margin-top:70px;
 
 }
 
+/*=========================
+        CARD
+=========================*/
+
 .collection-card{
 
     background:white;
 
-    border-radius:28px;
+    border-radius:30px;
 
     overflow:hidden;
 
     box-shadow:0 20px 45px rgba(0,0,0,.10);
 
-    transition:.45s;
+    transition:.4s;
+
+    text-align:center;
 
     position:relative;
 
@@ -847,7 +855,233 @@ header{
 
     transform:translateY(-12px);
 
-    box-shadow:0 30px 55px rgba(0,0,0,.18);
+    box-shadow:0 35px 65px rgba(0,0,0,.18);
+
+}
+
+/*=========================
+    MARBLE IMAGE AREA
+=========================*/
+
+.collection-image{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:430px;
+
+    padding:35px;
+
+    background:url("images/turquoisemarblebackground.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+/* Soft glow */
+
+.collection-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.55);
+
+    filter:blur(30px);
+
+}
+
+/* Jewelry Image */
+
+.collection-image img{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:90%;
+
+    max-height:90%;
+
+    object-fit:contain;
+
+    transition:.5s;
+
+}
+
+.collection-card:hover .collection-image img{
+
+    transform:scale(1.08);
+
+}
+
+/*=========================
+        RIBBON
+=========================*/
+
+.ribbon{
+
+    position:absolute;
+
+    top:20px;
+
+    left:20px;
+
+    background:linear-gradient(
+        135deg,
+        var(--turquoise),
+        #6fdad4
+    );
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    z-index:5;
+
+}
+
+/*=========================
+        INFO
+=========================*/
+
+.collection-info{
+
+    padding:35px;
+
+}
+
+.collection-info h3{
+
+    font-size:2rem;
+
+    color:var(--burnt);
+
+    margin-bottom:12px;
+
+}
+
+.collection-info p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.collection-price{
+
+    display:block;
+
+    font-size:1.7rem;
+
+    color:var(--turquoise);
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+/*=========================
+        BUTTON
+=========================*/
+
+.collection-btn{
+
+    display:inline-block;
+
+    padding:16px 36px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--burnt),
+        var(--rust)
+    );
+
+    transition:.35s;
+
+}
+
+.collection-btn:hover{
+
+    background:linear-gradient(
+        135deg,
+        var(--turquoise),
+        var(--turquoise-dark)
+    );
+
+    transform:translateY(-4px);
+
+}
+
+/*=========================
+    GOLD BORDER EFFECT
+=========================*/
+
+.collection-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border:2px solid transparent;
+
+    border-radius:30px;
+
+    transition:.35s;
+
+}
+
+.collection-card:hover::after{
+
+    border-color:#d7b56d;
+
+}
+
+/*=========================
+        MOBILE
+=========================*/
+
+@media(max-width:768px){
+
+    .collection-image{
+
+        height:330px;
+
+    }
 
 }
 /*==================================
