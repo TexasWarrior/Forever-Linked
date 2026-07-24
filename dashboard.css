@@ -1,57 +1,237 @@
-/*======================================
-        FOREVER LINKED DASHBOARD
-======================================*/
+/*==================================================
+        FOREVER LINKED OWNER DASHBOARD
+        Luxury Business Management System
+==================================================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/*==================================
+        GOOGLE FONT
+==================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*==================================
+            ROOT
+==================================*/
+
+:root{
+
+    --cream:#F8F4ED;
+    --sand:#ECE3D6;
+
+    --white:#FFFFFF;
+
+    --black:#1C1917;
+    --charcoal:#2D2926;
+
+    --burnt:#C56C3B;
+    --burnt-dark:#A44F26;
+
+    --turquoise:#4EB9B4;
+    --turquoise-dark:#2E8C87;
+
+    --gold:#D5B26B;
+
+    --green:#34B56A;
+    --red:#E25A5A;
+    --orange:#F0A13E;
+
+    --shadow:0 18px 40px rgba(0,0,0,.08);
+
+    --radius:22px;
+
+}
+
+/*==================================
+            RESET
+==================================*/
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
 }
 
 body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--cream);
+
+    color:var(--black);
+
     display:flex;
-    background:#f7f5f1;
-    color:#333;
-}
 
-/*==============================
-        SIDEBAR
-==============================*/
-
-.sidebar{
-
-    width:260px;
-
-    height:100vh;
-
-    background:#1f1b18;
-
-    color:white;
-
-    position:fixed;
-
-    left:0;
-
-    top:0;
-
-    padding:30px 0;
+    min-height:100vh;
 
 }
 
-.logo{
+/*==================================
+        SCROLLBAR
+==================================*/
 
-    text-align:center;
+::-webkit-scrollbar{
 
-    font-size:28px;
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--cream);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--burnt);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--turquoise);
+
+}
+
+/*==================================
+        TYPOGRAPHY
+==================================*/
+
+h1{
+
+    font-size:2.4rem;
+
+    font-weight:700;
+
+}
+
+h2{
+
+    font-size:1.5rem;
 
     font-weight:600;
 
-    color:#D5B26B;
+}
 
-    margin-bottom:50px;
+h3{
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+}
+
+p{
+
+    color:#777;
+
+    line-height:1.7;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    font-family:inherit;
+
+}
+/*==================================================
+                    SIDEBAR
+==================================================*/
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:270px;
+
+    height:100vh;
+
+    background:linear-gradient(
+        180deg,
+        var(--black),
+        var(--charcoal)
+    );
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    box-shadow:6px 0 30px rgba(0,0,0,.15);
+
+    z-index:1000;
+
+}
+
+/*==================================
+            LOGO
+==================================*/
+
+.logo{
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo h2{
+
+    color:var(--gold);
+
+    font-size:2rem;
+
+    margin-bottom:8px;
+
+}
+
+.logo span{
+
+    color:#bbb;
+
+    font-size:.9rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+/*==================================
+        NAVIGATION
+==================================*/
+
+.sidebar nav{
+
+    flex:1;
+
+    padding:25px 0;
 
 }
 
@@ -63,402 +243,153 @@ body{
 
 .sidebar li{
 
-    padding:18px 35px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    font-size:17px;
+    margin:8px 18px;
 
 }
 
-.sidebar li i{
-
-    width:30px;
-
-}
-
-.sidebar li:hover{
-
-    background:#2b2622;
-
-}
-
-.sidebar li.active{
-
-    background:#C56C3B;
-
-}
-
-/*==============================
-        MAIN
-==============================*/
-
-.main{
-
-    margin-left:260px;
-
-    width:calc(100% - 260px);
-
-    padding:40px;
-
-}
-
-header{
+.sidebar a{
 
     display:flex;
-
-    justify-content:space-between;
 
     align-items:center;
 
-    margin-bottom:35px;
+    gap:16px;
+
+    padding:16px 22px;
+
+    border-radius:16px;
+
+    color:#d8d8d8;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    transition:.30s;
 
 }
 
-header h1{
+.sidebar a i{
 
-    font-size:34px;
-
-    color:#C56C3B;
-
-}
-
-/*==============================
-        CARDS
-==============================*/
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-    gap:25px;
-
-    margin-bottom:40px;
-
-}
-
-.card{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:30px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.card:hover{
-
-    transform:translateY(-6px);
-
-}
-
-.card h2{
-
-    font-size:38px;
-
-    color:#2B8A86;
-
-    margin-bottom:8px;
-
-}
-
-.card p{
-
-    color:#777;
-
-}
-
-/*==============================
-        PANEL
-==============================*/
-
-.panel{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:30px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-}
-
-.panel h2{
-
-    margin-bottom:20px;
-
-    color:#C56C3B;
-
-}
-
-/*==============================
-        TABLE
-==============================*/
-
-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-}
-
-th{
-
-    background:#f3ede5;
-
-    text-align:left;
-
-    padding:15px;
-
-}
-
-td{
-
-    padding:15px;
-
-    border-bottom:1px solid #ececec;
-
-}
-
-tr:hover{
-
-    background:#fafafa;
-
-}
-
-/*==============================
-        MOBILE
-==============================*/
-
-@media(max-width:900px){
-
-.sidebar{
-
-    width:80px;
-
-}
-
-.logo{
-
-    font-size:0;
-
-}
-
-.logo::after{
-
-    content:"FL";
-
-    font-size:28px;
-
-}
-
-.sidebar li{
+    width:24px;
 
     text-align:center;
 
-    padding:20px;
+    font-size:1.1rem;
 
 }
 
-.sidebar li i{
+/* Hover */
 
-    display:block;
+.sidebar a:hover{
 
-    margin:auto;
+    background:rgba(255,255,255,.08);
 
-    margin-bottom:5px;
+    color:white;
 
-}
-
-.main{
-
-    margin-left:80px;
-
-    width:calc(100% - 80px);
+    transform:translateX(6px);
 
 }
 
+/* Active */
+
+.sidebar .active a{
+
+    background:linear-gradient(
+        135deg,
+        var(--burnt),
+        var(--burnt-dark)
+    );
+
+    color:white;
+
+    box-shadow:0 10px 20px rgba(197,108,59,.30);
+
 }
-/*==================================================
-                DASHBOARD GRID
-==================================================*/
 
-.dashboard-grid{
+/*==================================
+        LOGOUT
+==================================*/
 
-    display:grid;
-
-    grid-template-columns:2fr 1fr;
-
-    gap:25px;
-
-}
-
-.panel{
-
-    background:white;
-
-    border-radius:18px;
+.sidebar-footer{
 
     padding:25px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border-top:1px solid rgba(255,255,255,.08);
 
 }
 
-.panel h2{
-
-    color:#C56C3B;
-
-    margin-bottom:20px;
-
-}
-
-/*==============================
-        APPOINTMENTS
-==============================*/
-
-.appointment{
+.logout-btn{
 
     display:flex;
 
-    justify-content:space-between;
+    align-items:center;
 
-    padding:15px 0;
+    justify-content:center;
 
-    border-bottom:1px solid #eee;
-
-}
-
-/*==============================
-        INVENTORY
-==============================*/
-
-.inventory-list{
-
-    list-style:none;
-
-}
-
-.inventory-list li{
-
-    padding:12px 0;
-
-    border-bottom:1px solid #eee;
-
-}
-
-/*==============================
-        PROGRESS
-==============================*/
-
-.goal{
-
-    margin-bottom:25px;
-
-}
-
-.progress{
+    gap:12px;
 
     width:100%;
 
-    height:12px;
+    padding:15px;
 
-    background:#ececec;
+    border:none;
 
-    border-radius:20px;
+    border-radius:16px;
 
-    overflow:hidden;
+    background:rgba(255,255,255,.08);
 
-    margin-top:10px;
+    color:white;
 
-}
+    cursor:pointer;
 
-.progress-fill{
+    transition:.30s;
 
-    height:100%;
-
-    border-radius:20px;
+    font-size:1rem;
 
 }
 
-.revenue{
+.logout-btn:hover{
 
-    width:72%;
-
-    background:#2B8A86;
+    background:var(--burnt);
 
 }
 
-.appointments{
-
-    width:58%;
-
-    background:#C56C3B;
-
-}
-
-.inventory{
-
-    width:92%;
-
-    background:#D5B26B;
-
-}
-
-/*==============================
+/*==================================
         MOBILE
-==============================*/
+==================================*/
 
 @media(max-width:1000px){
 
-.dashboard-grid{
+    .sidebar{
 
-    grid-template-columns:1fr;
+        width:90px;
 
-}
+    }
 
-}
-/*==================================================
-                    CHARTS
-==================================================*/
+    .logo h2,
+    .logo span,
+    .sidebar a span,
+    .logout-btn span{
 
-.charts{
+        display:none;
 
-    display:grid;
+    }
 
-    grid-template-columns:2fr 1fr;
+    .sidebar a{
 
-    gap:25px;
+        justify-content:center;
 
-    margin-top:30px;
+        padding:18px;
 
-}
+    }
 
-canvas{
+    .sidebar a i{
 
-    width:100% !important;
+        margin:0;
 
-    height:350px !important;
+        font-size:1.3rem;
 
-}
-
-@media(max-width:1000px){
-
-.charts{
-
-    grid-template-columns:1fr;
-
-}
+    }
 
 }
