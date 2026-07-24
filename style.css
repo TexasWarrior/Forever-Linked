@@ -1445,18 +1445,18 @@ grid-template-columns:1fr;
 
 .footer-banner{
     position: relative;
-    width: 110%;
+    width: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border-radius: 0px;
+    border-radius:0px;
 }
 
 .footer-image{
     display: block;
-    width: 110%;
+    width: 100%;
     height: auto;
-    border-radius: 0px;
+    border-radius:0px;
 }
 /* Position each invisible button */
 
