@@ -399,35 +399,25 @@ header{
 
 .hero{
 
-    min-height:100vh;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            rgba(0,0,0,.45),
-            rgba(0,0,0,.20)
-        ),
-        url("images/hero-background.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
+    animation:heroZoom 15s ease-in-out infinite alternate;
 
 }
 
+@keyframes heroZoom{
+
+    from{
+
+        background-size:100%;
+
+    }
+
+    to{
+
+        background-size:108%;
+
+    }
+
+}
 .hero::before{
 
     content:"";
@@ -2249,6 +2239,273 @@ header{
         width:40px;
 
         height:40px;
+
+    }
+
+}
+/*==================================================
+            FINAL POLISH
+==================================================*/
+
+/* Smooth transitions */
+
+*{
+
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+
+}
+
+/* Better image rendering */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+    user-select:none;
+
+}
+
+/*==================================================
+            SECTION SPACING
+==================================================*/
+
+section{
+
+    padding:120px 0;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+    margin-top:10px;
+
+    margin-bottom:20px;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/*==================================================
+            CARD HOVER
+==================================================*/
+
+.collection-card,
+.gallery-item,
+.highlight,
+.contact-card{
+
+    will-change:transform;
+
+}
+
+.collection-card:hover,
+.gallery-item:hover,
+.highlight:hover,
+.contact-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/*==================================================
+            BUTTON POLISH
+==================================================*/
+
+button,
+.btn,
+.hero-button,
+.collection-btn,
+.booking-btn{
+
+    letter-spacing:.5px;
+
+    font-weight:600;
+
+}
+
+button:hover,
+.btn:hover,
+.hero-button:hover,
+.collection-btn:hover,
+.booking-btn:hover{
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.18);
+
+}
+
+/*==================================================
+            SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--cream);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+
+        var(--burnt),
+
+        var(--turquoise)
+
+    );
+
+    border-radius:20px;
+
+}
+
+/*==================================================
+            TEXT SELECTION
+==================================================*/
+
+::selection{
+
+    background:var(--turquoise);
+
+    color:white;
+
+}
+
+/*==================================================
+            FADE-IN ANIMATION
+==================================================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*==================================================
+            ICONS
+==================================================*/
+
+i{
+
+    transition:.3s;
+
+}
+
+i:hover{
+
+    transform:scale(1.15);
+
+}
+
+/*==================================================
+            MOBILE
+==================================================*/
+
+@media(max-width:992px){
+
+    h1{
+
+        font-size:4rem;
+
+    }
+
+    h2{
+
+        font-size:2.7rem;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    section{
+
+        padding:90px 0;
+
+    }
+
+    h1{
+
+        font-size:3rem;
+
+    }
+
+    h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .booking-buttons{
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .hero{
+
+        text-align:center;
 
     }
 
