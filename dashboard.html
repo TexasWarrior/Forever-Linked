@@ -166,6 +166,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 ===================================================-->
 
 <div class="dashboard-grid">
+ <!--==================================================
+                    ANALYTICS
+===================================================-->
+
+<div class="charts">
+
+    <!-- Monthly Sales -->
+
+    <div class="panel">
+
+        <h2>Monthly Revenue</h2>
+
+        <canvas id="salesChart"></canvas>
+
+    </div>
+
+    <!-- Product Breakdown -->
+
+    <div class="panel">
+
+        <h2>Sales Breakdown</h2>
+
+        <canvas id="productChart"></canvas>
+
+    </div>
+
+</div>   
 
     <!--==================================
             RECENT SALES
@@ -339,8 +366,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
     </div>
 
-</div>   
-<script src="js/dashboard.js"></script>
+</div> 
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/dashboard.js"></script>   
 </body>
 
 </html>
