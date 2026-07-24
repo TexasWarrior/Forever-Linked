@@ -1458,26 +1458,32 @@ grid-template-columns:1fr;
     height: auto;
     border-radius:0px;
 }
-/* Position each invisible button */
-
 .facebook{
-    left:42.6%;
-    top:50.5%;
+    width:55px;
+    height:55px;
+    left:40%;
+    top:73%;
 }
 
 .instagram{
-    left:48.3%;
-    top:50.5%;
+    width:55px;
+    height:55px;
+    left:46%;
+    top:73%;
 }
 
 .tiktok{
-    left:54.0%;
-    top:50.5%;
+    width:55px;
+    height:55px;
+    left:52%;
+    top:73%;
 }
 
 .pinterest{
-    left:59.7%;
-    top:50.5%;
+    width:55px;
+    height:55px;
+    left:58%;
+    top:73%;
 }
 /*==================================================
                 SCROLL TO TOP
