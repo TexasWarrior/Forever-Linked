@@ -1446,28 +1446,34 @@ grid-template-columns:1fr;
 
     position:relative;
 
-    width:95%;
+    width:100%;
 
-    max-width:1800px;
+    max-width:1400px;
 
     margin:60px auto;
+
+    padding:0;
 
     border-radius:35px;
 
     overflow:hidden;
 
-}
+    line-height:0;
 
+}
 .footer-image{
 
     width:100%;
 
+    height:auto;
+
     display:block;
+
+    object-fit:contain;
 
     border-radius:35px;
 
 }
-
 .hotspot{
 
     position:absolute;
