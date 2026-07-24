@@ -1445,7 +1445,7 @@ grid-template-columns:1fr;
 
 .footer-banner{
     position: relative;
-    width: 100%;
+    width: 110%;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -1454,7 +1454,7 @@ grid-template-columns:1fr;
 
 .footer-image{
     display: block;
-    width: 100%;
+    width: 110%;
     height: auto;
     border-radius: 0px;
 }
