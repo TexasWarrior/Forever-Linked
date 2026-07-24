@@ -3,294 +3,709 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Forever Linked Dashboard</title>
+    <title>Forever Linked Dashboard</title>
 
-<link rel="stylesheet" href="css/dashboard.css">
+    <!-- Dashboard CSS -->
 
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
+<!--==================================================
+                    SIDEBAR
+===================================================-->
 
-<div class="sidebar">
+<aside class="sidebar">
 
-    <div class="logo">
+    <div class="sidebar-logo">
 
-        Forever Linked
+        <img src="images/foreverlinkedlogo.png"
+             alt="Forever Linked">
+
+        <h2>Forever Linked</h2>
 
     </div>
 
-    <ul>
+    <nav>
 
-        <li class="active">
+        <ul>
 
-            <i class="fas fa-house"></i>
+            <li class="active">
 
-            Dashboard
+                <i class="fas fa-house"></i>
 
-        </li>
+                <span>Dashboard</span>
 
-        <li>
+            </li>
 
-            <i class="fas fa-calendar"></i>
+            <li>
 
-            Appointments
+                <i class="fas fa-calendar-days"></i>
 
-        </li>
+                <span>Appointments</span>
 
-        <li>
+            </li>
 
-            <i class="fas fa-users"></i>
+            <li>
 
-            Customers
+                <i class="fas fa-users"></i>
 
-        </li>
+                <span>Customers</span>
 
-        <li>
+            </li>
 
-            <i class="fas fa-dollar-sign"></i>
+            <li>
 
-            Sales
+                <i class="fas fa-gem"></i>
 
-        </li>
+                <span>Products</span>
 
-        <li>
+            </li>
 
-            <i class="fas fa-box"></i>
+            <li>
 
-            Inventory
+                <i class="fas fa-box-open"></i>
 
-        </li>
+                <span>Inventory</span>
 
-        <li>
+            </li>
 
-            <i class="fas fa-chart-line"></i>
+            <li>
 
-            Reports
+                <i class="fas fa-cash-register"></i>
 
-        </li>
+                <span>Sales</span>
 
-        <li>
+            </li>
 
-            <i class="fas fa-file-invoice-dollar"></i>
+            <li>
 
-            Expenses
+                <i class="fas fa-chart-line"></i>
 
-        </li>
+                <span>Reports</span>
 
-        <li>
+            </li>
 
-            <i class="fas fa-gear"></i>
+            <li>
 
-            Settings
+                <i class="fas fa-wallet"></i>
 
-        </li>
+                <span>Expenses</span>
 
-    </ul>
+            </li>
 
-</div>
+            <li>
 
-<!-- MAIN -->
+                <i class="fas fa-gear"></i>
 
-<div class="main">
+                <span>Settings</span>
 
-    <header>
+            </li>
 
-    <div>
+        </ul>
 
-        <h1>Owner Dashboard</h1>
+    </nav>
 
-        <p id="todayDate"></p>
+</aside>
+
+<!--==================================================
+                    MAIN CONTENT
+===================================================-->
+
+<main class="main-content">
+<!--==================================================
+                    TOP HEADER
+===================================================-->
+
+<header class="top-header">
+
+    <!-- Left Side -->
+
+    <div class="header-left">
+
+        <h1>
+            Owner Dashboard
+        </h1>
+
+        <p id="todayDate">
+            Welcome back, Kylie!
+        </p>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="header-right">
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <i class="fas fa-search"></i>
+
+            <input
+                type="text"
+                placeholder="Search customers, sales...">
+
+        </div>
+
+        <!-- Notification -->
+
+        <button class="icon-btn">
+
+            <i class="fas fa-bell"></i>
+
+            <span class="notification-dot"></span>
+
+        </button>
+
+        <!-- Messages -->
+
+        <button class="icon-btn">
+
+            <i class="fas fa-envelope"></i>
+
+        </button>
+
+        <!-- Profile -->
+
+        <div class="profile">
+
+            <img
+                src="images/profilepicture.jpg"
+                alt="Owner">
+
+            <div>
+
+                <h3>Kylie Hazle</h3>
+
+                <span>Owner</span>
+
+            </div>
+
+        </div>
 
     </div>
 
 </header>
 
-    <!-- STAT CARDS -->
+<!--==================================================
+                QUICK STATS TITLE
+===================================================-->
 
-   <div class="cards">
+<section class="dashboard-intro">
 
-    <!-- Today's Sales -->
+    <h2>
+        Business Overview
+    </h2>
 
-    <div class="card">
+    <p>
 
-        <h2 id="todaySales">$0</h2>
+        Here's what's happening with Forever Linked today.
 
-        <p>Today's Sales</p>
+    </p>
+
+</section>  
+<!--==================================================
+                    STAT CARDS
+===================================================-->
+
+<section class="stats-grid">
+
+    <!-- Today's Revenue -->
+
+    <div class="stat-card">
+
+        <div class="stat-icon revenue">
+
+            <i class="fas fa-dollar-sign"></i>
+
+        </div>
+
+        <div class="stat-info">
+
+            <h3 id="todaySales">$0.00</h3>
+
+            <p>Today's Revenue</p>
+
+        </div>
 
     </div>
 
     <!-- Monthly Revenue -->
 
-    <div class="card">
+    <div class="stat-card">
 
-        <h2 id="monthSales">$0</h2>
+        <div class="stat-icon month">
 
-        <p>This Month</p>
+            <i class="fas fa-chart-line"></i>
+
+        </div>
+
+        <div class="stat-info">
+
+            <h3 id="monthSales">$0.00</h3>
+
+            <p>This Month</p>
+
+        </div>
 
     </div>
 
     <!-- Today's Appointments -->
 
-    <div class="card">
+    <div class="stat-card">
 
-        <h2 id="appointments">0</h2>
+        <div class="stat-icon appointments">
 
-        <p>Appointments</p>
+            <i class="fas fa-calendar-check"></i>
+
+        </div>
+
+        <div class="stat-info">
+
+            <h3 id="appointments">0</h3>
+
+            <p>Appointments Today</p>
+
+        </div>
 
     </div>
 
-    <!-- Inventory Alerts -->
+    <!-- Total Customers -->
 
-    <div class="card">
+    <div class="stat-card">
 
-        <h2 id="inventoryAlerts">0</h2>
+        <div class="stat-icon customers">
 
-        <p>Inventory Alerts</p>
+            <i class="fas fa-users"></i>
+
+        </div>
+
+        <div class="stat-info">
+
+            <h3 id="customerCount">0</h3>
+
+            <p>Total Customers</p>
+
+        </div>
 
     </div>
 
-</div>
+    <!-- Inventory Value -->
 
-<!--==================================================
-                DASHBOARD GRID
-===================================================-->
+    <div class="stat-card">
 
-<div class="dashboard-grid">
+        <div class="stat-icon inventory">
+
+            <i class="fas fa-gem"></i>
+
+        </div>
+
+        <div class="stat-info">
+
+            <h3 id="inventoryValue">$0</h3>
+
+            <p>Inventory Value</p>
+
+        </div>
+
+    </div>
+
+    <!-- Expenses -->
+
+    <div class="stat-card">
+
+        <div class="stat-icon expenses">
+
+            <i class="fas fa-receipt"></i>
+
+        </div>
+
+        <div class="stat-info">
+
+            <h3 id="monthlyExpenses">$0</h3>
+
+            <p>Monthly Expenses</p>
+
+        </div>
+
+    </div>
+
+</section>
  <!--==================================================
                     ANALYTICS
 ===================================================-->
 
-<div class="charts">
+<section class="analytics">
 
-    <!-- Monthly Sales -->
+    <!-- Revenue Chart -->
 
-    <div class="panel">
+    <div class="panel large-panel">
 
-        <h2>Monthly Revenue</h2>
+        <div class="panel-header">
 
-        <canvas id="salesChart"></canvas>
+            <h2>Monthly Revenue</h2>
 
-    </div>
+            <span>This Year</span>
 
-    <!-- Product Breakdown -->
+        </div>
 
-    <div class="panel">
-
-        <h2>Sales Breakdown</h2>
-
-        <canvas id="productChart"></canvas>
+        <canvas id="revenueChart"></canvas>
 
     </div>
 
-</div>   
+    <!-- Sales Breakdown -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>Sales Breakdown</h2>
+
+            <span>Products</span>
+
+        </div>
+
+        <canvas id="salesBreakdown"></canvas>
+
+    </div>
+
+    <!-- Appointment Chart -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>Appointments</h2>
+
+            <span>This Week</span>
+
+        </div>
+
+        <canvas id="appointmentChart"></canvas>
+
+    </div>
+
+    <!-- Payment Methods -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>Payment Methods</h2>
+
+        </div>
+
+        <div class="payment-list">
+
+            <div class="payment-row">
+
+                <span>💳 Square</span>
+
+                <strong>$0</strong>
+
+            </div>
+
+            <div class="payment-row">
+
+                <span>💵 Cash</span>
+
+                <strong>$0</strong>
+
+            </div>
+
+            <div class="payment-row">
+
+                <span>📱 Venmo</span>
+
+                <strong>$0</strong>
+
+            </div>
+
+            <div class="payment-row">
+
+                <span>💲 Cash App</span>
+
+                <strong>$0</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--==================================================
+                RECENT SALES
+===================================================-->
+
+<section class="recent-sales">
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>Recent Sales</h2>
+
+            <button class="view-all-btn">
+                View All
+            </button>
+
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Invoice</th>
+
+                        <th>Customer</th>
+
+                        <th>Item</th>
+
+                        <th>Payment</th>
+
+                        <th>Total</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="salesTable">
+
+                    <tr>
+
+                        <td>#1001</td>
+
+                        <td>Sarah Martin</td>
+
+                        <td>Gold Bracelet</td>
+
+                        <td>Square</td>
+
+                        <td>$85.00</td>
+
+                        <td>
+                            <span class="status paid">
+                                Paid
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>#1002</td>
+
+                        <td>Emily Rogers</td>
+
+                        <td>Anklet</td>
+
+                        <td>Cash</td>
+
+                        <td>$75.00</td>
+
+                        <td>
+                            <span class="status paid">
+                                Paid
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>#1003</td>
+
+                        <td>Jessica Turner</td>
+
+                        <td>Charm</td>
+
+                        <td>Venmo</td>
+
+                        <td>$25.00</td>
+
+                        <td>
+                            <span class="status paid">
+                                Paid
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>#1004</td>
+
+                        <td>Madison Lee</td>
+
+                        <td>Bracelet + Charm</td>
+
+                        <td>Cash App</td>
+
+                        <td>$110.00</td>
+
+                        <td>
+                            <span class="status pending">
+                                Pending
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>#1005</td>
+
+                        <td>Private Party</td>
+
+                        <td>Deposit</td>
+
+                        <td>Square</td>
+
+                        <td>$250.00</td>
+
+                        <td>
+                            <span class="status paid">
+                                Paid
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+<!--==================================================
+            DAILY OPERATIONS
+===================================================-->
+
+<section class="operations-grid">
 
     <!--==================================
-            RECENT SALES
+            TODAY'S APPOINTMENTS
     ===================================-->
 
     <div class="panel">
 
-        <h2>Recent Sales</h2>
+        <div class="panel-header">
 
-        <table>
+            <h2>Today's Appointments</h2>
 
-            <thead>
+            <button class="view-all-btn">
+                Calendar
+            </button>
 
-                <tr>
-
-                    <th>Date</th>
-                    <th>Customer</th>
-                    <th>Item</th>
-                    <th>Total</th>
-
-                </tr>
-
-            </thead>
-
-            <tbody id="salesTable">
-
-                <tr>
-
-                    <td>7/15</td>
-                    <td>Sarah M.</td>
-                    <td>Bracelet</td>
-                    <td>$85</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>7/15</td>
-                    <td>Emily R.</td>
-                    <td>Anklet</td>
-                    <td>$75</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>7/14</td>
-                    <td>Jessica T.</td>
-                    <td>Charm</td>
-                    <td>$25</td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-    <!--==================================
-            UPCOMING APPOINTMENTS
-    ===================================-->
-
-    <div class="panel">
-
-        <h2>Today's Appointments</h2>
+        </div>
 
         <div class="appointment-list">
 
-            <div class="appointment">
+            <div class="appointment-card">
 
-                <strong>10:00 AM</strong>
+                <div class="appointment-time">
 
-                <span>Sarah Martin</span>
+                    10:00 AM
 
-            </div>
+                </div>
 
-            <div class="appointment">
+                <div class="appointment-info">
 
-                <strong>11:30 AM</strong>
+                    <h3>Sarah Martin</h3>
 
-                <span>Emily Rogers</span>
+                    <p>Gold Bracelet</p>
 
-            </div>
-
-            <div class="appointment">
-
-                <strong>2:00 PM</strong>
-
-                <span>Private Party</span>
+                </div>
 
             </div>
 
-            <div class="appointment">
+            <div class="appointment-card">
 
-                <strong>5:00 PM</strong>
+                <div class="appointment-time">
 
-                <span>Walk-In</span>
+                    11:30 AM
+
+                </div>
+
+                <div class="appointment-info">
+
+                    <h3>Emily Rogers</h3>
+
+                    <p>Anklet + Charm</p>
+
+                </div>
+
+            </div>
+
+            <div class="appointment-card">
+
+                <div class="appointment-time">
+
+                    2:00 PM
+
+                </div>
+
+                <div class="appointment-info">
+
+                    <h3>Private Party</h3>
+
+                    <p>Birthday Event</p>
+
+                </div>
+
+            </div>
+
+            <div class="appointment-card">
+
+                <div class="appointment-time">
+
+                    5:00 PM
+
+                </div>
+
+                <div class="appointment-info">
+
+                    <h3>Walk-In Available</h3>
+
+                    <p>Open Time Slot</p>
+
+                </div>
 
             </div>
 
@@ -304,61 +719,705 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
     <div class="panel">
 
-        <h2>Inventory</h2>
+        <div class="panel-header">
+
+            <h2>Inventory Alerts</h2>
+
+        </div>
 
         <ul class="inventory-list">
 
-            <li>⚠ Rope Chain — 3 ft left</li>
+            <li class="warning">
 
-            <li>⚠ Cow Skull Charms — 2 left</li>
+                ⚠ Gold Paperclip Chain
+                <strong>2 ft left</strong>
 
-            <li>✔ Satellite Chain — In Stock</li>
+            </li>
 
-            <li>✔ Gold Filled Chain — In Stock</li>
+            <li class="warning">
+
+                ⚠ Cow Skull Charms
+                <strong>3 remaining</strong>
+
+            </li>
+
+            <li>
+
+                ✔ Satellite Chain
+                <strong>In Stock</strong>
+
+            </li>
+
+            <li>
+
+                ✔ Sterling Silver Chain
+                <strong>In Stock</strong>
+
+            </li>
+
+            <li>
+
+                ✔ Birthstone Charms
+                <strong>In Stock</strong>
+
+            </li>
 
         </ul>
 
     </div>
 
     <!--==================================
-            MONTHLY GOALS
+            TO DO LIST
     ===================================-->
 
     <div class="panel">
 
-        <h2>Monthly Goals</h2>
+        <div class="panel-header">
 
-        <div class="goal">
-
-            Revenue
-
-            <div class="progress">
-
-                <div class="progress-fill revenue"></div>
-
-            </div>
+            <h2>Today's Tasks</h2>
 
         </div>
 
-        <div class="goal">
+        <div class="task-list">
 
-            Appointments
+            <label>
 
-            <div class="progress">
+                <input type="checkbox">
 
-                <div class="progress-fill appointments"></div>
+                Order more Paperclip Chain
 
-            </div>
+            </label>
+
+            <label>
+
+                <input type="checkbox">
+
+                Confirm Saturday Party
+
+            </label>
+
+            <label>
+
+                <input type="checkbox">
+
+                Post Instagram Reel
+
+            </label>
+
+            <label>
+
+                <input type="checkbox">
+
+                Update Monthly Expenses
+
+            </label>
+
+            <label>
+
+                <input type="checkbox">
+
+                Respond to Facebook Messages
+
+            </label>
 
         </div>
 
-        <div class="goal">
+    </div>
 
-            Inventory
+    <!--==================================
+            QUICK NOTES
+    ===================================-->
 
-            <div class="progress">
+    <div class="panel">
 
-                <div class="progress-fill inventory"></div>
+        <div class="panel-header">
+
+            <h2>Quick Notes</h2>
+
+        </div>
+
+        <textarea
+            id="dailyNotes"
+            placeholder="Write notes here..."></textarea>
+
+        <button class="save-btn">
+
+            Save Notes
+
+        </button>
+
+    </div>
+
+</section> 
+   <!--==================================================
+                FINANCE CENTER
+===================================================-->
+
+<section class="finance-section">
+
+    <div class="section-heading">
+
+        <h2>Business Finances</h2>
+
+        <p>Your business at a glance</p>
+
+    </div>
+
+    <div class="finance-grid">
+
+        <!-- Revenue -->
+
+        <div class="finance-card">
+
+            <i class="fas fa-sack-dollar"></i>
+
+            <h3>Total Revenue</h3>
+
+            <h1 id="totalRevenue">
+
+                $0.00
+
+            </h1>
+
+        </div>
+
+        <!-- Expenses -->
+
+        <div class="finance-card">
+
+            <i class="fas fa-credit-card"></i>
+
+            <h3>Total Expenses</h3>
+
+            <h1 id="totalExpenses">
+
+                $0.00
+
+            </h1>
+
+        </div>
+
+        <!-- Profit -->
+
+        <div class="finance-card">
+
+            <i class="fas fa-chart-line"></i>
+
+            <h3>Net Profit</h3>
+
+            <h1 id="netProfit">
+
+                $0.00
+
+            </h1>
+
+        </div>
+
+        <!-- Taxes -->
+
+        <div class="finance-card">
+
+            <i class="fas fa-receipt"></i>
+
+            <h3>Estimated Taxes</h3>
+
+            <h1 id="estimatedTaxes">
+
+                $0.00
+
+            </h1>
+
+        </div>
+
+        <!-- Bank Balance -->
+
+        <div class="finance-card">
+
+            <i class="fas fa-building-columns"></i>
+
+            <h3>Business Account</h3>
+
+            <h1 id="bankBalance">
+
+                $0.00
+
+            </h1>
+
+        </div>
+
+        <!-- Outstanding -->
+
+        <div class="finance-card">
+
+            <i class="fas fa-clock"></i>
+
+            <h3>Outstanding Payments</h3>
+
+            <h1 id="outstanding">
+
+                $0.00
+
+            </h1>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================================================
+            MONTHLY EXPENSES
+===================================================-->
+
+<section class="expense-section">
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>Monthly Expenses</h2>
+
+            <button class="view-all-btn">
+
+                Add Expense
+
+            </button>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date</th>
+
+                    <th>Category</th>
+
+                    <th>Description</th>
+
+                    <th>Amount</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="expenseTable">
+
+                <tr>
+
+                    <td>July 1</td>
+
+                    <td>Inventory</td>
+
+                    <td>Gold Filled Chain</td>
+
+                    <td>$225.00</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>July 4</td>
+
+                    <td>Supplies</td>
+
+                    <td>Jump Rings</td>
+
+                    <td>$38.00</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>July 8</td>
+
+                    <td>Fuel</td>
+
+                    <td>Travel to Pop-Up</td>
+
+                    <td>$42.15</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>July 12</td>
+
+                    <td>Advertising</td>
+
+                    <td>Facebook Ads</td>
+
+                    <td>$50.00</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section> 
+    <!--==================================================
+                CUSTOMER MANAGER
+===================================================-->
+
+<section class="customers-section">
+
+    <div class="section-heading">
+
+        <h2>Customer Management</h2>
+
+        <p>Keep track of every Forever Linked client.</p>
+
+    </div>
+
+    <!-- Search -->
+
+    <div class="customer-toolbar">
+
+        <input
+            type="text"
+            id="customerSearch"
+            placeholder="Search customer...">
+
+        <button class="view-all-btn">
+
+            <i class="fas fa-plus"></i>
+
+            Add Customer
+
+        </button>
+
+    </div>
+
+    <!-- Customer Table -->
+
+    <div class="panel">
+
+        <table class="customer-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Name</th>
+
+                    <th>Phone</th>
+
+                    <th>Email</th>
+
+                    <th>Pieces</th>
+
+                    <th>Total Spent</th>
+
+                    <th>Last Visit</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="customerTable">
+
+                <tr>
+
+                    <td>Sarah Martin</td>
+
+                    <td>(806) 555-1234</td>
+
+                    <td>sarah@email.com</td>
+
+                    <td>3</td>
+
+                    <td>$245.00</td>
+
+                    <td>July 15</td>
+
+                    <td>
+
+                        <span class="vip">
+
+                            VIP
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Emily Rogers</td>
+
+                    <td>(806) 555-9012</td>
+
+                    <td>emily@email.com</td>
+
+                    <td>2</td>
+
+                    <td>$160.00</td>
+
+                    <td>July 10</td>
+
+                    <td>
+
+                        <span class="returning">
+
+                            Returning
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Jessica Taylor</td>
+
+                    <td>(806) 555-8899</td>
+
+                    <td>jess@email.com</td>
+
+                    <td>1</td>
+
+                    <td>$75.00</td>
+
+                    <td>July 2</td>
+
+                    <td>
+
+                        <span class="new">
+
+                            New
+
+                        </span>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+<!--==================================================
+                INVENTORY MANAGER
+===================================================-->
+
+<section class="inventory-section">
+
+    <div class="section-heading">
+
+        <h2>Inventory Manager</h2>
+
+        <p>Track every chain, charm, connector, and supply.</p>
+
+    </div>
+
+    <div class="inventory-toolbar">
+
+        <button class="view-all-btn">
+
+            <i class="fas fa-plus"></i>
+
+            Add Inventory
+
+        </button>
+
+    </div>
+
+    <div class="panel">
+
+        <table class="inventory-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Item</th>
+
+                    <th>Category</th>
+
+                    <th>In Stock</th>
+
+                    <th>Cost</th>
+
+                    <th>Retail</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="inventoryTable">
+
+                <tr>
+
+                    <td>Gold Filled Paperclip Chain</td>
+
+                    <td>Chain</td>
+
+                    <td>18 ft</td>
+
+                    <td>$6.50 / ft</td>
+
+                    <td>$85 Bracelet</td>
+
+                    <td>
+                        <span class="instock">
+                            In Stock
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Sterling Silver Chain</td>
+
+                    <td>Chain</td>
+
+                    <td>12 ft</td>
+
+                    <td>$5.25 / ft</td>
+
+                    <td>$75 Bracelet</td>
+
+                    <td>
+                        <span class="instock">
+                            In Stock
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Turquoise Charm</td>
+
+                    <td>Charm</td>
+
+                    <td>5</td>
+
+                    <td>$4.00</td>
+
+                    <td>$18</td>
+
+                    <td>
+                        <span class="lowstock">
+                            Low Stock
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Cow Skull Charm</td>
+
+                    <td>Charm</td>
+
+                    <td>2</td>
+
+                    <td>$5.00</td>
+
+                    <td>$20</td>
+
+                    <td>
+                        <span class="critical">
+                            Order Soon
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Jump Rings</td>
+
+                    <td>Supplies</td>
+
+                    <td>250</td>
+
+                    <td>$0.05</td>
+
+                    <td>Included</td>
+
+                    <td>
+                        <span class="instock">
+                            In Stock
+                        </span>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+<!--==================================================
+                BUSINESS CALENDAR
+===================================================-->
+
+<section class="calendar-section">
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>Upcoming Events</h2>
+
+            <button class="view-all-btn">
+
+                Open Calendar
+
+            </button>
+
+        </div>
+
+        <div class="calendar-events">
+
+            <div class="event">
+
+                <strong>July 20</strong>
+
+                <span>Private Jewelry Party</span>
+
+            </div>
+
+            <div class="event">
+
+                <strong>July 22</strong>
+
+                <span>Pop-Up Event</span>
+
+            </div>
+
+            <div class="event">
+
+                <strong>July 26</strong>
+
+                <span>Bridal Appointment</span>
+
+            </div>
+
+            <div class="event">
+
+                <strong>July 30</strong>
+
+                <span>Inventory Order</span>
 
             </div>
 
@@ -366,9 +1425,104 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
     </div>
 
-</div> 
- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="js/dashboard.js"></script>   
+</section>
+
+<!--==================================================
+                QUICK ACTIONS
+===================================================-->
+
+<section class="quick-actions">
+
+    <div class="section-heading">
+
+        <h2>Quick Actions</h2>
+
+    </div>
+
+    <div class="action-grid">
+
+        <button class="action-btn">
+
+            <i class="fas fa-calendar-plus"></i>
+
+            New Appointment
+
+        </button>
+
+        <button class="action-btn">
+
+            <i class="fas fa-user-plus"></i>
+
+            Add Customer
+
+        </button>
+
+        <button class="action-btn">
+
+            <i class="fas fa-receipt"></i>
+
+            Record Sale
+
+        </button>
+
+        <button class="action-btn">
+
+            <i class="fas fa-box-open"></i>
+
+            Add Inventory
+
+        </button>
+
+        <button class="action-btn">
+
+            <i class="fas fa-chart-bar"></i>
+
+            View Reports
+
+        </button>
+
+        <button class="action-btn">
+
+            <i class="fas fa-gear"></i>
+
+            Settings
+
+        </button>
+
+    </div>
+
+</section>
+
+<!--==================================================
+                    FOOTER
+===================================================-->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        Forever Linked Business Dashboard v1.0
+
+    </p>
+
+    <small>
+
+        © 2026 Forever Linked • Designed for Kylie Hazle
+
+    </small>
+
+</footer>
+
+</main>
+
+<!--==================================================
+                JAVASCRIPT
+===================================================-->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/dashboard.js"></script>
+
 </body>
 
 </html>
