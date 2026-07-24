@@ -1439,57 +1439,36 @@ grid-template-columns:1fr;
 
 }
 
-/*==================================================
-                FOOTER
-==================================================*/
+/*=========================================
+            FOOTER
+=========================================*/
+
 .footer-banner{
-
-    position:relative;
-
-    width:100%;
-
-    max-width:1400px;
-
-    margin:60px auto;
-
-    padding:0;
-
-    border-radius:35px;
-
-    overflow:hidden;
-
-    line-height:0;
-
+    position: relative;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 35px;
 }
+
 .footer-image{
-
-    width:100%;
-
-    height:auto;
-
-    display:block;
-
-    object-fit:contain;
-
-    border-radius:35px;
-
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 35px;
 }
+
 .hotspot{
-
-    position:absolute;
-
-    width:70px;
-
-    height:70px;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    background:transparent;
-
-    z-index:100;
-
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
 }
 /* Position each invisible button */
 
