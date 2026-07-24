@@ -105,51 +105,61 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
     <header>
 
-        <h1>
+    <div>
 
-            Owner Dashboard
+        <h1>Owner Dashboard</h1>
 
-        </h1>
+        <p id="todayDate"></p>
 
-    </header>
+    </div>
+
+</header>
 
     <!-- STAT CARDS -->
 
-    <div class="cards">
+   <div class="cards">
 
-        <div class="card">
+    <!-- Today's Sales -->
 
-            <h2>$0</h2>
+    <div class="card">
 
-            <p>Today's Sales</p>
+        <h2 id="todaySales">$0</h2>
 
-        </div>
-
-        <div class="card">
-
-            <h2>$0</h2>
-
-            <p>This Month</p>
-
-        </div>
-
-        <div class="card">
-
-            <h2>0</h2>
-
-            <p>Appointments</p>
-
-        </div>
-
-        <div class="card">
-
-            <h2>0</h2>
-
-            <p>Inventory Alerts</p>
-
-        </div>
+        <p>Today's Sales</p>
 
     </div>
+
+    <!-- Monthly Revenue -->
+
+    <div class="card">
+
+        <h2 id="monthSales">$0</h2>
+
+        <p>This Month</p>
+
+    </div>
+
+    <!-- Today's Appointments -->
+
+    <div class="card">
+
+        <h2 id="appointments">0</h2>
+
+        <p>Appointments</p>
+
+    </div>
+
+    <!-- Inventory Alerts -->
+
+    <div class="card">
+
+        <h2 id="inventoryAlerts">0</h2>
+
+        <p>Inventory Alerts</p>
+
+    </div>
+
+</div>
 
     <!-- RECENT SALES -->
 
@@ -200,7 +210,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     </div>
 
 </div>
-
+<script src="js/dashboard.js"></script>
 </body>
 
 </html>
