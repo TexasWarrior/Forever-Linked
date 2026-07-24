@@ -1,207 +1,88 @@
-/*====================================
+/*==================================================
         FOREVER LINKED DASHBOARD
-====================================*/
+        dashboard.js
+==================================================*/
 
-/* Today's Date */
+document.addEventListener("DOMContentLoaded", () => {
 
-const today = new Date();
-
-const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-};
-
-const dateElement = document.getElementById("todayDate");
-
-if(dateElement){
-    dateElement.textContent =
-        today.toLocaleDateString("en-US", options);
-}
-
-
-/*====================================
-        SAMPLE SALES DATA
-====================================*/
-
-const dashboardData = {
-
-    todaySales: 385,
-
-    monthSales: 7245,
-
-    appointments: 6,
-
-    inventoryAlerts: 2
-
-};
-
-
-/*====================================
-        UPDATE DASHBOARD CARDS
-====================================*/
-
-document.getElementById("todaySales").textContent =
-"$" + dashboardData.todaySales;
-
-document.getElementById("monthSales").textContent =
-"$" + dashboardData.monthSales;
-
-document.getElementById("appointments").textContent =
-dashboardData.appointments;
-
-document.getElementById("inventoryAlerts").textContent =
-dashboardData.inventoryAlerts;
-
-
-/*====================================
-        INVENTORY ALERT
-====================================*/
-
-if(dashboardData.inventoryAlerts > 0){
-
-    console.log(
-        "Inventory is getting low."
-    );
-
-}
-
-
-/*====================================
-        WELCOME MESSAGE
-====================================*/
-
-console.log(
-"Forever Linked Dashboard Loaded Successfully!"
-);
-/*====================================
-            SALES CHART
-====================================*/
-
-const salesChart = new Chart(
-
-document.getElementById("salesChart"),
-
-{
-
-type:"line",
-
-data:{
-
-labels:[
-"Jan",
-"Feb",
-"Mar",
-"Apr",
-"May",
-"Jun",
-"Jul"
-],
-
-datasets:[{
-
-label:"Revenue",
-
-data:[
-1200,
-1800,
-2500,
-3100,
-4200,
-5600,
-7245
-],
-
-borderColor:"#2B8A86",
-
-backgroundColor:"rgba(43,138,134,.15)",
-
-fill:true,
-
-tension:.35
-
-}]
-
-},
-
-options:{
-
-responsive:true,
-
-plugins:{
-
-legend:{
-display:false
-}
-
-}
-
-}
+    initializeDashboard();
 
 });
 
+/*==================================================
+        INITIALIZE DASHBOARD
+==================================================*/
 
-/*====================================
-        PRODUCT CHART
-====================================*/
+function initializeDashboard(){
 
-const productChart = new Chart(
-
-document.getElementById("productChart"),
-
-{
-
-type:"doughnut",
-
-data:{
-
-labels:[
-"Bracelets",
-"Anklets",
-"Charms",
-"Private Parties"
-],
-
-datasets:[{
-
-data:[
-45,
-20,
-25,
-10
-],
-
-backgroundColor:[
-
-"#C56C3B",
-
-"#2B8A86",
-
-"#D5B26B",
-
-"#7A5C46"
-
-]
-
-}]
-
-},
-
-options:{
-
-responsive:true,
-
-plugins:{
-
-legend:{
-
-position:"bottom"
+    updateGreeting();
+    updateDate();
 
 }
 
-}
+/*==================================================
+        GREETING
+==================================================*/
+
+function updateGreeting(){
+
+    const hour = new Date().getHours();
+
+    let greeting = "Welcome";
+
+    if(hour < 12){
+
+        greeting = "Good Morning";
+
+    }
+
+    else if(hour < 18){
+
+        greeting = "Good Afternoon";
+
+    }
+
+    else{
+
+        greeting = "Good Evening";
+
+    }
+
+    const title = document.querySelector(".header-left h1");
+
+    if(title){
+
+        title.innerHTML = `${greeting}, Kylie 👋`;
+
+    }
 
 }
 
-});
+/*==================================================
+        TODAY'S DATE
+==================================================*/
+
+function updateDate(){
+
+    const today = new Date();
+
+    const options = {
+
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+
+    };
+
+    const formattedDate = today.toLocaleDateString("en-US", options);
+
+    const dateElement = document.getElementById("todayDate");
+
+    if(dateElement){
+
+        dateElement.textContent = formattedDate;
+
+    }
+
+}
