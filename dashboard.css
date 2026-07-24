@@ -81,8 +81,8 @@ body{
             rgba(248,244,237,.96),
             rgba(248,244,237,.96)
         ),
-        url("../images/newmarblefooter.png");
-
+       background-image: url("images/marblebackground.png");
+        
     background-size:cover;
 
     background-attachment:fixed;
