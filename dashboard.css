@@ -429,3 +429,36 @@ tr:hover{
 }
 
 }
+/*==================================================
+                    CHARTS
+==================================================*/
+
+.charts{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+canvas{
+
+    width:100% !important;
+
+    height:350px !important;
+
+}
+
+@media(max-width:1000px){
+
+.charts{
+
+    grid-template-columns:1fr;
+
+}
+
+}
